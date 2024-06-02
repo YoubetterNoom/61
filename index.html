@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEPE GOLD</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Microsoft+YaHei:wght@700&display=swap');
+
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: rgb(29, 29, 29); /* Set background to dark gray */
+            font-family: 'Microsoft YaHei', sans-serif;
+            font-weight: bold;
+            transition: background-color 0.3s ease, background 0.3s ease;
+            overflow: hidden; /* Prevent scrollbar due to falling images */
+            position: relative; /* Required for the pseudo-element */
+            color: white; /* Set text color to white */
+        }
+
+        h1 {
+            margin: 20px 0;
+            font-size: 3em; /* Increased size */
+            color: #0c98da; /* Blue color for the title */
+            transition: transform 0.3s ease; /* Transition for hover effect */
+        }
+
+        h1:hover {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+        img {
+            max-width: 20%; /* Adjusted size */
+            height: auto;
+            display: block;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            z-index: 2; /* Ensure it stays above the darkening layer */
+            border-radius: 50%; /* Circular mask */
+            border: 10px solid #0e94e2; /* Outer border */
+        }
+
+        img:hover {
+            transform: scale(1.2);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            z-index: 2; /* Ensure it stays above the darkening layer */
+        }
+
+        .button {
+            text-decoration: none;
+            padding: 15px 25px;
+            background-color: #bbbbbb;
+            color: rgb(39, 133, 196);
+            border-radius: 0; /* Removed rounded corners */
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #525252;
+            transform: scale(1.1);
+        }
+
+        .toggle-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .toggle-btn:hover {
+            background-color: #ebe6d5;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        .falling-img {
+            position: absolute;
+            top: -100px; /* Start above the viewport */
+            animation: fall linear infinite; /* Duration and easing will be set dynamically */
+        }
+    </style>
+</head>
+<body>
+    <h1>PEPE TRANSFORMERS</h1>
+    <img src="gold.png" alt="Center Image" id="center-image">
+    <div class="buttons">
+        <a target="_blank" href="https://x.com/pepetransol" class="button">Twitter</a>
+        <a target="_blank" href="https://t.me/pepetransformers" class="button">Telegram</a>
+        <a target="_blank" href="https://t.me/pepetransformers" class="button">Chart</a>
+    </div>
+
+    <script>
+        const img = document.getElementById('center-image');
+        const body = document.body;
+
+        img.addEventListener('mouseover', () => {
+            body.classList.add('hovered');
+        });
+
+        img.addEventListener('mouseout', () => {
+            body.classList.remove('hovered');
+        });
+    </script>
+</body>
+</html>
